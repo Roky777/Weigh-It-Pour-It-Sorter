@@ -6,6 +6,7 @@ const LEVELS = [
     instruction: "Sort things we weigh and things we pour.",
     showNames: true,
     maxOnBelt: 4,
+    beltTravelRate: 0.08,
     bins: [
       { id: "weight", label: "Weight", art: "rice" },
       { id: "capacity", label: "Capacity", art: "water" },
@@ -21,7 +22,8 @@ const LEVELS = [
     title: "Choose the Unit",
     instruction: "Choose kg, g, litre, or ml for each object.",
     showNames: true,
-    maxOnBelt: 4,
+    maxOnBelt: 3,
+    beltTravelRate: 0.07,
     bins: [
       { id: "kg", label: "kg", art: "rice" }, { id: "g", label: "g", art: "haldi" },
       { id: "litre", label: "litre", art: "water" }, { id: "ml", label: "ml", art: "syrup" },
