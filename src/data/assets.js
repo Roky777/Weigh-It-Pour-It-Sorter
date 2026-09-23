@@ -1,38 +1,38 @@
 const measureArt = (path) => new URL(`../../assets/GRADE 4/maths game/${path}`, import.meta.url).href;
 const levelArt = {
   level1: {
-    bananas: measureArt("level 1/banana.png"), potatoes: measureArt("level 1/potato (1).png"),
-    tomatoes: measureArt("level 1/tomato (1) (1).png"), rice: measureArt("level 1/rice packet (1).png"),
-    sugar: measureArt("level 1/sugar (1).png"), water: measureArt("level 1/water bottle (1).png"),
-    glass: measureArt("level 1/drinking_glass (1).png"), mug: measureArt("level 1/cup (1).png"),
-    syrup: measureArt("level 1/cough syrup.png"), oil: measureArt("level 1/cooking oil (1).png"),
+    bananas: measureArt("level 1/banana.webp"), potatoes: measureArt("level 1/potato (1).webp"),
+    tomatoes: measureArt("level 1/tomato (1) (1).webp"), rice: measureArt("level 1/rice packet (1).webp"),
+    sugar: measureArt("level 1/sugar (1).webp"), water: measureArt("level 1/water bottle (1).webp"),
+    glass: measureArt("level 1/drinking_glass (1).webp"), mug: measureArt("level 1/cup (1).webp"),
+    syrup: measureArt("level 1/cough syrup.webp"), oil: measureArt("level 1/cooking oil (1).webp"),
   },
   level2: {
-    rice: measureArt("level 2/rice_packet.png"), atta: measureArt("level 2/atta packet.png"), sugar: measureArt("level 2/sugar.png"),
-    daal: measureArt("level 2/daal packet.png"), haldi: measureArt("level 2/haldi.png"), salt: measureArt("level 2/salt (1).png"),
-    jug: measureArt("level 2/jug.png"), water: measureArt("level 2/water_bottle.png"), bucket: measureArt("level 2/bucket.png"),
-    syrup: measureArt("level 2/cough syrup.png"),
+    rice: measureArt("level 2/rice_packet.webp"), atta: measureArt("level 2/atta packet.webp"), sugar: measureArt("level 2/sugar.webp"),
+    daal: measureArt("level 2/daal packet.webp"), haldi: measureArt("level 2/haldi.webp"), salt: measureArt("level 2/salt (1).webp"),
+    jug: measureArt("level 2/jug.webp"), water: measureArt("level 2/water_bottle.webp"), bucket: measureArt("level 2/bucket.webp"),
+    syrup: measureArt("level 2/cough syrup.webp"),
   },
 };
 export function resolveMathArt(artId, assetSet) { return levelArt?.[assetSet]?.[artId] ?? levelArt.level1.rice; }
-const blankBin = "assets/ui/sorting-bin-blank.png";
+const blankBin = "assets/ui/sorting-bin-blank.webp";
 const binIds = ["weight", "capacity", "kg", "g", "litre", "ml"];
 export const assets = {
   characters: {
-    idle: "assets/characters/idle.png",
-    presentation: "assets/characters/final_presentation_clean.png",
-    correct: "assets/characters/modified_thubms_up.png",
-    nod: "assets/characters/updated_nod.png",
-    happy: "assets/characters/happy.png",
-    thinking: "assets/characters/thinking.png",
-    surprised: "assets/characters/surprised.png",
-    successDance: "assets/characters/moon_walk_normalized.png",
+    idle: "assets/characters/idle.webp",
+    presentation: "assets/characters/final_presentation_clean.webp",
+    correct: "assets/characters/modified_thubms_up.webp",
+    nod: "assets/characters/updated_nod.webp",
+    happy: "assets/characters/happy.webp",
+    thinking: "assets/characters/thinking.webp",
+    surprised: "assets/characters/surprised.webp",
+    successDance: "assets/characters/moon_walk_normalized.webp",
   },
   backgrounds: {}, items: { math: levelArt.level1, mathByLevel: levelArt },
   ui: {
-    success: ["assets/ui/start-background.png", "assets/ui/image 18.png", "assets/ui/success-star-1.png", "assets/ui/success-star-2.png", "assets/ui/success-star-3.png"],
-    conveyorRims: "assets/ui/conveyor-rims.png", conveyorFrame: "assets/ui/conveyor-frame.png", conveyorTrackMask: "assets/ui/conveyor-track.png",
-    sortingBins: Object.fromEntries(binIds.map((id) => [id, blankBin])), boxLeaves: "assets/ui/ui-box-leaves.png" }, audio: {}, fx: {},
+    success: ["assets/ui/start-background.webp", "assets/ui/image 18.webp", "assets/ui/success-star-1.webp", "assets/ui/success-star-2.webp", "assets/ui/success-star-3.webp"],
+    conveyorRims: "assets/ui/conveyor-rims.webp", conveyorFrame: "assets/ui/conveyor-frame.webp", conveyorTrackMask: "assets/ui/conveyor-track.webp",
+    sortingBins: Object.fromEntries(binIds.map((id) => [id, blankBin])), boxLeaves: "assets/ui/ui-box-leaves.webp" }, audio: {}, fx: {},
 };
 const imageRequests = new Map();
 export function preloadImage(src) {
