@@ -3,7 +3,7 @@ const item = (name, art, answer) => ({ name, art, answer });
 const LEVELS = [
   {
     title: "Weight or Capacity?",
-    instruction: "Sort things we weigh and things we pour.",
+    instruction: "Sort by the measurement normally used when buying or pouring.",
     showNames: true,
     maxOnBelt: 4,
     beltTravelRate: 0.08,
@@ -14,7 +14,7 @@ const LEVELS = [
     items: [
       item("Bananas", "bananas", "weight"), item("Potatoes", "potatoes", "weight"),
       item("Tomatoes", "tomatoes", "weight"), item("Rice packet", "rice", "weight"), item("Sugar packet", "sugar", "weight"),
-      item("Water bottle", "water", "capacity"), item("Glass", "glass", "capacity"), item("Mug", "mug", "capacity"),
+      item("Water in a bottle", "water", "capacity"), item("Glass of water", "glass", "capacity"), item("Mug of milk", "mug", "capacity"),
       item("Cough syrup", "syrup", "capacity"), item("Cooking oil", "oil", "capacity"),
     ],
   },
@@ -29,10 +29,10 @@ const LEVELS = [
       { id: "litre", label: "litre", art: "water" }, { id: "ml", label: "ml", art: "syrup" },
     ],
     items: [
-      item("Rice packet", "rice", "kg"), item("Atta packet", "atta", "kg"), item("Sugar packet", "sugar", "kg"),
-      item("Daal packet", "daal", "kg"), item("Haldi", "haldi", "g"), item("Salt", "salt", "g"),
-      item("Jug", "jug", "litre"), item("Water bottle", "water", "litre"), item("Bucket", "bucket", "litre"),
-      item("Cough syrup", "syrup", "ml"),
+      item("Large rice bag", "rice", "kg"), item("Large atta bag", "atta", "kg"), item("Large sugar bag", "sugar", "kg"),
+      item("Large daal bag", "daal", "kg"), item("Pinch of haldi", "haldi", "g"), item("Small salt packet", "salt", "g"),
+      item("Water jug", "jug", "litre"), item("1 litre water bottle", "water", "litre"), item("Bucket of water", "bucket", "litre"),
+      item("Cough syrup dose", "syrup", "ml"),
     ],
   },
 ];
