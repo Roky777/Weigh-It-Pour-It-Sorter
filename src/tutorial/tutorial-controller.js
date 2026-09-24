@@ -303,17 +303,25 @@ export class TutorialController {
         targetCopy.style.top = `${targetRect.top - stageRect.top}px`;
         targetCopy.style.width = `${targetRect.width}px`;
         targetCopy.style.height = `${targetRect.height}px`;
-        // The reusable bin artwork is blank; its category picture and label
-        // are separate layers. Spotlight all visible layers together so the
-        // tutorial target always looks like the actual in-game bin.
+        // Clone the complete rendered bin, not only its cardboard image.
+        // This preserves every game's category picture, multi-line label,
+        // leaves and any bin-specific styling inside the tutorial spotlight.
         const targetKey = `${target.dataset.dropCategory}:${target.dataset.renderKey}`;
         if (targetCopy.dataset.sourceKey !== targetKey) {
           targetCopy.dataset.sourceKey = targetKey;
-          targetCopy.replaceChildren(
-            ...[...target.querySelectorAll(
-              ".sorting-bin__leaves, .sorting-bin__image, .sorting-bin__category-icon, .sorting-bin__category-label",
-            )].map((element) => element.cloneNode(true)),
-          );
+          const binClone = target.cloneNode(true);
+          binClone.removeAttribute("data-drop-category");
+          binClone.removeAttribute("role");
+          binClone.removeAttribute("tabindex");
+          binClone.querySelector(".sorting-bin__hit-area")?.remove();
+          Object.assign(binClone.style, {
+            width: "100%",
+            height: "100%",
+            flex: "none",
+            filter: "none",
+            transform: "none",
+          });
+          targetCopy.replaceChildren(binClone);
         }
       }
     }
